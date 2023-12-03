@@ -27,14 +27,14 @@ apt-get update
 
 apt-get install mongodb-org
 
-# Editar /etc/mongod.conf -> sección network intefaces -> editar bindIP
-# para aceptar llamadas internas de servicios del mismo proyecto.
+- Editar /etc/mongod.conf -> sección network intefaces -> editar bindIP
+  para aceptar llamadas internas de servicios del mismo proyecto.
 
 service mongod start
 
-# Crear usuario y password para autenticación interna con db.createUser.
-# Crear usuarios necesarios, admin y usuario para la BD específica.
-# Editar /etc/mongod.conf -> descomentar security -> authorization: enabled
+- Crear usuario y password para autenticación interna con db.createUser.
+- Crear usuarios necesarios, admin y usuario para la BD específica.
+- Editar /etc/mongod.conf -> descomentar security -> authorization: enabled
 
 service mongod restart
 

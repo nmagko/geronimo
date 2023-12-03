@@ -1,0 +1,20 @@
+{
+  "getruc": {
+    "url": "http://34.16.161.4/consulta-ruc-json.php",
+    "token": "79fda70b-89da-4920-a980-9fcc89d71591-f2d2ace8-cf7e-4a9a-acab-0737f8a32258"
+  },
+  "database": {
+    "host": "10.182.0.3",
+    "port": 27017,
+    "name": "geronimo",
+    "user": "geronimoUser",
+    "password": "geronimoPassword"
+  },
+  "express": {
+    "port": "8080"
+  },
+  "collection": [
+    "juridica",
+    "credentials"
+  ]
+}

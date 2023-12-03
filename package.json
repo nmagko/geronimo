@@ -1,0 +1,19 @@
+{
+  "name": "geronimo-docker-image-js",
+  "version": "1.0.0",
+  "description": "Geronimo Docker KB with Node.JS",
+  "author": "Victor C <nmag.ko@gmail.com>",
+  "license": "MIT",
+  "main": "app.js",
+  "keywords": [
+    "nodejs",
+    "kb",
+    "docker"
+  ],
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mongodb": "^4.8.0"
+  }
+}

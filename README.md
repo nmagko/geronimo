@@ -1,15 +1,15 @@
-GERONIMO APP
+# GERONIMO
 
-OBJETIVO:
+## OBJETIVO:
 
 Crear un "Tier-3 application" que pueda interfazar via web service en
 GKE (API) y haga una invocación al web service JURIDICA para obterner
 datos de personas jurídicas y cuando los resultados sean correctos
 almacenarlos en un "MongoDB".
 
-TIER 3: DATABASE
+## TIER 3: DATABASE
 
-MONGODB
+## MONGODB
 
 1) Crear VM en Compute Engine con debian 11.8, para este caso estoy
 usando E2-micro (shared), 1G RAM, 10GB SSD, más que suficiente. IP
@@ -40,9 +40,9 @@ service mongod restart
 
 3) Nombre de la BD: geronimo
 
-TIER 2: API
+## TIER 2: API
 
-GKE
+## GKE
 
 1) Crear el proyecto y poner las dependencias en package.json y ejecutar
 
@@ -85,8 +85,10 @@ está en el github.
 
 Para las pruebas puedes usar POSTMAM o CURL.
 
-Con POSTMAN puedes validar 2 pruebas GET y POST, GET para validar que la
-API está arriba y es usado por el loadbalancer internamente para ver
+### Con POSTMAN
+
+puedes validar 2 pruebas GET y POST, GET para validar que la API está
+arriba y es usado por el loadbalancer internamente para ver
 disponibilidad y subir instancias en caso caiga una. Con POST se hace la
 llamada a la API para la consulta de RUC.
 
@@ -98,7 +100,7 @@ Postman KEY: tipo, VALUE: 1
 Postman KEY: ruc,  VALUE: 10297205264
 Respuesta: {"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
 
-Con CURL
+### Con CURL
 
 Curl GET: curl http://34.16.167.233:8080
 {"success":true,"message":"API up and running"}
@@ -106,6 +108,6 @@ Curl GET: curl http://34.16.167.233:8080
 Curl POST: curl -d '{"tipo": "1", "ruc": "10297205264"}' -H 'Content-Type: application/json' http://34.16.167.233:8080/register
 {"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
 
-TIER 1: FRONT-END
+## TIER 1: FRONT-END
 
-Se tratará en aplicación separada.
+Se tratará en aplicación separada, geronimoapp.

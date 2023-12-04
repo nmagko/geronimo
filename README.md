@@ -112,28 +112,50 @@ llamada a la API para la consulta de RUC.
 
 ```
 Postman GET: http://34.16.167.233:8080/
-Respuesta: {"success":true,"message":"API up and running"}
+Respuesta:
+```
+
+```json
+{"success":true,"message":"API up and running"}
 ```
 
 ```
 Postman POST: http://34.16.167.233:8080/register
 Postman KEY: tipo, VALUE: 1
 Postman KEY: ruc,  VALUE: 10297205264
-Respuesta: {"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
+Respuesta:
 ```
+
+```json
+{"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
+```
+
+Captura de pantalla Postman:
+
+![Screenshot](postman.png)
 
 ### Con CURL
 
 ```
 Curl GET: curl http://34.16.167.233:8080
+```
+
+```json
 {"success":true,"message":"API up and running"}
 ```
 
 ```
 Curl POST: curl -d '{"tipo": "1", "ruc": "10297205264"}' -H 'Content-Type: application/json' http://34.16.167.233:8080/register
+```
+
+```json
 {"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
 ```
 
 ## TIER 1: FRONT-END
 
-Se tratará en aplicación separada, geronimoapp.
+Ver aplicacion geronimoapp en:
+
+```
+https://github.com/nmagko/geronimoapp
+```

@@ -154,7 +154,7 @@ Respuesta:
 {"success":true,"message":"API up and running"}
 ```
 
-Llamada GET
+Llamada POST
 
 ```
 Curl POST: curl -d '{"tipo": "1", "ruc": "10297205264"}' -H 'Content-Type: application/json' http://34.16.167.233:8080/register

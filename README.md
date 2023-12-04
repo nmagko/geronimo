@@ -110,21 +110,27 @@ arriba y es usado por el loadbalancer internamente para ver
 disponibilidad y subir instancias en caso caiga una. Con POST se hace la
 llamada a la API para la consulta de RUC.
 
+Llamada GET
+
 ```
 Postman GET: http://34.16.167.233:8080/
-Respuesta:
 ```
+
+Respuesta:
 
 ```json
 {"success":true,"message":"API up and running"}
 ```
 
+Llamada POST
+
 ```
 Postman POST: http://34.16.167.233:8080/register
 Postman KEY: tipo, VALUE: 1
 Postman KEY: ruc,  VALUE: 10297205264
-Respuesta:
 ```
+
+Respuesta:
 
 ```json
 {"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
@@ -136,17 +142,24 @@ Captura de pantalla Postman:
 
 ### Con CURL
 
+Llamada GET
+
 ```
 Curl GET: curl http://34.16.167.233:8080
 ```
+
+Respuesta:
 
 ```json
 {"success":true,"message":"API up and running"}
 ```
 
+Llamada GET
+
 ```
 Curl POST: curl -d '{"tipo": "1", "ruc": "10297205264"}' -H 'Content-Type: application/json' http://34.16.167.233:8080/register
 ```
+Respuesta:
 
 ```json
 {"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}

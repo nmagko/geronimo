@@ -105,14 +105,14 @@ está en el github.
 
 Para las pruebas puedes usar POSTMAM o CURL.
 
-### Con POSTMAN
+### POSTMAN
 
 puedes validar 2 pruebas GET y POST, GET para validar que la API está
 arriba y es usado por el loadbalancer internamente para ver
 disponibilidad y subir instancias en caso caiga una. Con POST se hace la
 llamada a la API para la consulta de RUC.
 
-Llamada GET
+GET
 
 ```
 Postman GET: http://34.16.167.233:8080/
@@ -124,7 +124,7 @@ Respuesta:
 {"success":true,"message":"API up and running"}
 ```
 
-Llamada POST
+POST
 
 ```
 Postman POST: http://34.16.167.233:8080/register
@@ -142,9 +142,9 @@ Captura de pantalla Postman:
 
 ![Screenshot](postman.png)
 
-### Con CURL
+### CURL
 
-Llamada GET
+GET
 
 ```
 Curl GET: curl http://34.16.167.233:8080
@@ -156,7 +156,7 @@ Respuesta:
 {"success":true,"message":"API up and running"}
 ```
 
-Llamada POST
+POST
 
 ```
 Curl POST: curl -d '{"tipo": "1", "ruc": "10297205264"}' -H 'Content-Type: application/json' http://34.16.167.233:8080/register
@@ -169,7 +169,7 @@ Respuesta:
 
 ## TIER 1: FRONT-END
 
-Ver aplicacion geronimoapp en:
+Ver aplicacion relacionada geronimoapp en:
 
 ```
 https://github.com/nmagko/geronimoapp

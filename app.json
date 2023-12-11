@@ -1,14 +1,14 @@
 {
   "getruc": {
-    "url": "http://34.16.161.4/consulta-ruc-json.php",
+    "url": "http://YOUR_WEB_SERVER_PUBLIC_IP/consulta-ruc-json.php",
     "token": "79fda70b-89da-4920-a980-9fcc89d71591-f2d2ace8-cf7e-4a9a-acab-0737f8a32258"
   },
   "database": {
-    "host": "10.182.0.3",
+    "host": "INTERNAL_DB_IP",
     "port": 27017,
     "name": "geronimo",
-    "user": "geronimoUser",
-    "password": "geronimoPassword"
+    "user": "YOUR_MONGODB_USER",
+    "password": "YOUR_MONGODB_PASSWORD"
   },
   "express": {
     "port": "8080"

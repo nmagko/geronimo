@@ -13,15 +13,15 @@
 
 /* define __API_JS */
 
-/* Constantes */
+/* Constants */
 
-/* Del sistema */
+/* System constants */
 const filesys   = require ('fs');
 const ifdefw    = function (debu, iout) { if (debu) stdout.write (iout + '\n') };
 const EXIT_FAILURE
       = 1;
 
-/* Configuración del sistema */
+/* System config */
 appcfg          = {};
 try {
     appcfg      = JSON.parse(filesys.readFileSync(process.cwd() + '/app.json', 'ascii'));
@@ -42,7 +42,7 @@ const app       = express();
 const router    = express.Router();
 const port      = appcfg.express.port;
 
-/* Recursos HTTP */
+/* HTTP resources */
 const http      = require ('http');
 
 router.use(express.json());
@@ -52,7 +52,7 @@ router.use(function (req, res, next) {
     next();
 });
 
-/* Método post principal solicitado por reto técnico */
+/* Main method requested by the technical challenge */
 router.post('/register', function(req, res){
     let body = "";
     let tipo = req.params.tipo || req.body.tipo || req.query.tipo;
@@ -66,7 +66,7 @@ router.post('/register', function(req, res){
 	});
 	response.on ("end", function () {
 	    try {
-		/* Aquí debe ir código de la BD */
+		/* Here is the database code */
 		mongocl.connect(conn_string, function (db_err, db_cli) {
 		    if (db_err != null) {
 			body = JSON.stringify({ "error": "Database connection error" });
@@ -74,7 +74,7 @@ router.post('/register', function(req, res){
 			res.end("\n");
 		    } else {
 			let db = db_cli.db(appcfg.database.name);
-			/* Convirtiendo data recibida en objeto JSON */
+			/* Receiving the JSON object */
 			let data_recibida = JSON.parse(body);
 			let query = { ruc: data_recibida.ruc };
 			let update = { $set: data_recibida };
@@ -83,7 +83,7 @@ router.post('/register', function(req, res){
 			if ( data_recibida.success ) { 
 			    collection.updateOne( query, update, options );
 			}
-			/* Monstrando resultado */
+			/* Showing results */
 			console.log(JSON.stringify(data_recibida));
 			res.write(body);
 			res.end("\n");
@@ -102,17 +102,17 @@ router.post('/register', function(req, res){
     });
 });
 
-/* Método GET que KB usará para validar disponibilidad de instancia */
+/* Method GET that will be used by Kubernetes to check the instance availability */
 router.get('/', function(req, res){
     res.writeHead(200, {'Content-Type': 'application/json'});
     res.write(JSON.stringify({"success": true, "message": "API up and running"}));
     res.end("\n");
 });
 
-/* Binding de aplicación (running) */
+/* Application's binding (running) */
 app.use('/', router);
 app.listen(port, function (req, res) {
-    console.log('Escuchando puerto 8080')
+    console.log('Listening to port 8080')
 });
 
 /* endif __API_JS */

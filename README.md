@@ -103,6 +103,10 @@ here, ultimately the source code It's on Git Hub.
 
 You can use POSTMAN or CURL for testing.
 
+## PUBLISHING
+
+The application was published for seven days on the IP used as an example.
+
 ### POSTMAN
 
 GET
@@ -122,13 +126,13 @@ POST
 ```
 Postman POST: http://34.16.167.233:8080/register
 Postman KEY: tipo, VALUE: 1
-Postman KEY: ruc,  VALUE: 10297205264
+Postman KEY: ruc,  VALUE: 10777777774
 ```
 
 Answer:
 
 ```json
-{"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
+{"success": true, "ruc": "10777777774", "nombre_o_razon_social": "XXXXX WWW YYYY ZZZZZZ", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
 ```
 
 Postman screenshot:
@@ -152,13 +156,13 @@ Answer:
 POST
 
 ```
-Curl POST: curl -d '{"tipo": "1", "ruc": "10297205264"}' -H 'Content-Type: application/json' http://34.16.167.233:8080/register
+Curl POST: curl -d '{"tipo": "1", "ruc": "10777777774"}' -H 'Content-Type: application/json' http://34.16.167.233:8080/register
 ```
 
 Answer:
 
 ```json
-{"success": true, "ruc": "10297205264", "nombre_o_razon_social": "SALAS PUMACAYO VICTOR CLODOALDO", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
+{"success": true, "ruc": "10777777774", "nombre_o_razon_social": "XXXXX WWW YYYY ZZZZZZ", "estado_del_contribuyente": "ACTIVO", "condicion_de_domicilio": "HABIDO", "ubigeo": "-", "tipo_de_via": "-", "nombre_de_via": "-", "codigo_de_zona": "-", "tipo_de_zona": "-", "numero": "-", "interior": "-", "lote": "-", "dpto": "-", "manzana": "-", "kilometro": "-", "departamento": "-", "provincia": "-", "distrito": "-", "direccion": "", "direccion_completa": " - - - -", "ultima_actualizacion": "2023-12-03 13:42:19"}
 ```
 
 ## TIER 1: FRONT-END

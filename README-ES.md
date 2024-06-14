@@ -105,8 +105,6 @@ está en el github.
 
 Para las pruebas puedes usar POSTMAM o CURL.
 
-## PUBLISHING
-
 La aplicación estuvo publicada durante siete días en la IP utilizada como ejemplo.
 
 ### POSTMAN

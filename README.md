@@ -103,8 +103,6 @@ here, ultimately the source code It's on Git Hub.
 
 You can use POSTMAN or CURL for testing.
 
-## PUBLISHING
-
 The application was published for seven days on the IP used as an example.
 
 ### POSTMAN
